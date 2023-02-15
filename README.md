@@ -1,6 +1,6 @@
 # Particle Swarm Optimization within Python
 <p align="center">
-<img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/movie.gif" width="300"> <img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/movie2.gif" width="300"> 
+<img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/movie.gif" width="300"> <img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/movie2.gif" width="300"> 
 </p>
 
 
@@ -22,7 +22,7 @@ Mathematically this position update is defined as follows:
    
 These equations become clear when presented in a simple 2 variable scenario: 
 <p align="center">
-<img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/PS1.png" width="400"> <img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/PS2.png" width="400">
+<img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/PS1.png" width="400"> <img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/PS2.png" width="400">
 </p>
 
 Initially every particle is given a random velocity vi, and the function is evaluated for every particle. 
@@ -38,7 +38,7 @@ It's seen in the second graph the effect of lining up these vectors and then the
 
 
 
-<img align="right" src="https://github.com/TomRSavage/ParticleSwarm/blob/master/Sty.gif" width="400">
+<img align="right" src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/Sty.gif" width="400">
 
 
 
@@ -52,7 +52,7 @@ There are also two important parameters (c1,c2) that define how much a particle 
 There has been much discussion over a 'standard' for these parameters (See Bratton, Kennedy: Defining a Standard for Particle Swarm Optimization (2007)) but in reality each problem will perform better with different conditions.  Here they are set to 2.3 and 1.8 respectively, as suggested by Bratton and Kennedy.
 Optimizing these parameters takes the form of a meta-optimization problem.
 
- <img align="left" src="https://github.com/TomRSavage/ParticleSwarm/blob/master/PSOtopology.png" width="400">
+ <img align="left" src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/PSOtopology.png" width="400">
  
 
 The 'Topology' of a particle swarm also bears an influence on how the swarm behaves. Here, each particle has knowledge about it's two neighbour's positions. This is then that particle's 'global best'. This is known as the ring topology, and was initially deemed to converge too slowly. However it stops the particles becoming too focused on the global best point and converging prematurely. Through this shared knowledge the particles are more likely to find the global optimum.
@@ -70,7 +70,7 @@ Recently (~2010) there has been an effort to simplify ever more complicated part
 
 ### Effect of swarm conflict and topologies
 <p align="center">
-<img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/Graph.PNG" width="400"><img src="https://github.com/TomRSavage/ParticleSwarm/blob/master/GraphZoom.PNG" width="400">
+<img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/Graph.PNG" width="400"><img src="https://github.com/tex-andre/particle-swarm/blob/master/Resources/GraphZoom.PNG" width="400">
 </p>
  The above figure shows how whilst using a global topology initially provides faster convergence, it stagnates very quickly. A local topology, whilst initially slower allows the particles to converge on the global minimum. 
  The effect of the added conflict is also clear, ensuring the particles do not become complacent and allowing them to reach the global minimum albeit at a slower pace.
