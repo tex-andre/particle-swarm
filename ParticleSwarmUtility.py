@@ -10,6 +10,7 @@ import copy
 import numpy.random as rnd
 import time
 import matplotlib.pyplot as plt
+from matplotlib import cm
 
 
 def Rosenbrock(X):
@@ -134,24 +135,23 @@ def withinbounds(bounds,particle_pos):
     return
 
 
-def plot(f):
+def plot_3D(f):
     plt.style.use('_mpl-gallery')
 
     # make the data
-    np.random.seed(3)
-    x = 4 + np.random.normal(0, 2, 24)
-    y = 4 + np.random.normal(0, 2, len(x))
-    # size and color:
-    sizes = np.random.uniform(15, 80, len(x))
-    colors = np.random.uniform(15, 80, len(x))
+    X = np.arange(-5, 5, 0.25)
+    Y = np.arange(-5, 5, 0.25)
+    X, Y = np.meshgrid(X, Y)
+    R = np.sqrt(X**2 + Y**2)
+    Z = f([X,Y])
 
-    # plot
-    fig, ax = plt.subplots()
+    # Plot the surface
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    ax.plot_surface(X, Y, Z, vmin=Z.min() * 2, cmap=cm.Blues)
 
-    ax.scatter(x, y, s=sizes, c=colors, vmin=0, vmax=100)
-
-    ax.set(xlim=(-2, 2), xticks=np.arange(-2, 2),
-        ylim=(-2, 2), yticks=np.arange(-2, 2))
+    ax.set(xticklabels=[],
+        yticklabels=[],
+        zticklabels=[])
 
     plt.show()        
                 

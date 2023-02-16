@@ -84,7 +84,7 @@ def particleswarm(f,bounds,p,c1,c2,vmax,tol):
 
 
 f=PSU.Rosenbrock
-PSU.plot(f)
+PSU.plot_3D(f)
 
 dimensions=10
 dimension_bounds=[-2,2]
@@ -100,7 +100,7 @@ c1=2.8 #shouldn't really change
 c2=1.3 #shouldn't really change
 tol=0.00000000000001
 
-particleswarm(f,bounds,p,c1,c2,vmax,tol)            
+#particleswarm(f,bounds,p,c1,c2,vmax,tol)            
                 
                 
     
