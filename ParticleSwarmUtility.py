@@ -135,23 +135,29 @@ def withinbounds(bounds,particle_pos):
     return
 
 
-def plot_3D(f):
+def plot_3D(f,bounds,particle_pos,pos_val,p):
     plt.style.use('_mpl-gallery')
 
+    xlim = bounds[0]
+    ylim = bounds[1]
     # make the data
-    X = np.arange(-5, 5, 0.25)
-    Y = np.arange(-5, 5, 0.25)
+    X = np.arange(xlim[0], xlim[1], 0.2)
+    Y = np.arange(ylim[0], ylim[1], 0.2)
     X, Y = np.meshgrid(X, Y)
-    R = np.sqrt(X**2 + Y**2)
     Z = f([X,Y])
 
+    xs = [particle_pos[i][0] for i in range(p)]
+    ys = [particle_pos[i][1] for i in range(p)]
+    zs = pos_val
     # Plot the surface
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     ax.plot_surface(X, Y, Z, vmin=Z.min() * 2, cmap=cm.Blues)
+    #Plot scatter points
+    ax.scatter(xs, ys, zs)
 
-    ax.set(xticklabels=[],
-        yticklabels=[],
-        zticklabels=[])
+    #ax.set(xticklabels=[],
+    #       yticklabels=[],
+    #       zticklabels=[])
 
     plt.show()        
                 

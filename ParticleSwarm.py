@@ -11,8 +11,6 @@ import numpy.random as rnd
 import ParticleSwarmUtility as PSU
 
  
-
-
 def particleswarm(f,bounds,p,c1,c2,vmax,tol):
     '''
     DESCRIPTION
@@ -79,14 +77,14 @@ def particleswarm(f,bounds,p,c1,c2,vmax,tol):
 
         local_best=PSU.local_best_get(particle_pos,pos_val,p)
 
-
+    PSU.plot_3D(f,bounds,particle_pos,pos_val,p)
     return print('Optimum at: ',swarm_best,'\n','Function at optimum: ',f(swarm_best)) 
 
 
 f=PSU.Rosenbrock
-PSU.plot_3D(f)
+#PSU.plot_3D(f)
 
-dimensions=10
+dimensions=2
 dimension_bounds=[-2,2]
 bounds=[0]*dimensions #creating 5 dimensional bounds
 for i in range(dimensions):
@@ -100,7 +98,8 @@ c1=2.8 #shouldn't really change
 c2=1.3 #shouldn't really change
 tol=0.00000000000001
 
-#particleswarm(f,bounds,p,c1,c2,vmax,tol)            
+particleswarm(f,bounds,p,c1,c2,vmax,tol)
+
                 
                 
     
