@@ -82,14 +82,12 @@ def particleswarm(f,bounds,p,c1,c2,vmax,tol):
 
 
 f=PSU.Rosenbrock
-#PSU.plot_3D(f)
 
 dimensions=2
 dimension_bounds=[-2,2]
 bounds=[0]*dimensions #creating 5 dimensional bounds
 for i in range(dimensions):
     bounds[i]=dimension_bounds
-
 #creates bounds [[x1,x2],[x3,x4],[x5,x6]....]    
     
 p=60 #shouldn't really change 
